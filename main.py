@@ -59,7 +59,9 @@ def tvs_pool_handler(input_file):
 def result_file_handler(result_file, containers_pool):
     with open(result_file, "w") as file:
         for container in containers_pool:
-            file.write(f"Контейнер № {container.number} ({len(container.tvs_lst)} ТВС), тепловыделение: {round(container.heat, 4)}\n")
+            file.write(
+                f"Контейнер № {container.number} ({len(container.tvs_lst)} ТВС), тепловыделение: {round(container.heat, 4)}\n"
+            )
             for tvs in container.tvs_lst:
                 file.write(f"{tvs}\n")
             file.write("\n")
@@ -70,7 +72,7 @@ def average_heat_calculation(mas: list[TVS | Container]):
 
 
 def disp_calculate(pool, avg_q):
-    return sum([(_cont.heat - avg_q)**2 for _cont in pool])
+    return sum([(_cont.heat - avg_q) ** 2 for _cont in pool])
 
 
 def replace_tvs(cont_1: Container, cont_2: Container, tvs_1_num: int, tvs_2_num: int):

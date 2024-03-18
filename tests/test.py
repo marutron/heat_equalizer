@@ -1,7 +1,7 @@
 from main import Container, TVS, replace_tvs
 
 cont_1 = Container(1)
-cont_1.tvs_lst.append(TVS("11", 1) )
+cont_1.tvs_lst.append(TVS("11", 1))
 cont_1.tvs_lst.append(TVS("21", 1))
 
 cont_2 = Container(2)
